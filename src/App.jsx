@@ -1,6 +1,7 @@
-import React, {useState, Fragment} from "react";
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Inicio, Error, ItemListContainer} from "./components";
+import { Inicio, Error, ItemListContainer, OfferItemListContainer} from "./components";
+
 
 const router = createBrowserRouter([
     {
@@ -12,19 +13,17 @@ const router = createBrowserRouter([
         path: "/Catalogo",
         element: <ItemListContainer />,
     },
-    /* {
+    {
         path: "/Ofertas",
-        element: <ofertas />,
-    }, */
-    
+        element: <OfferItemListContainer />,
+    }, 
 ]);
 
 export function App() {
 
     return (
-        <Fragment>
+        <React.Fragment>
             <RouterProvider router={router} />
-        </Fragment>
-
+        </React.Fragment>
     );
 }

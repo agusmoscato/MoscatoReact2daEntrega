@@ -1,14 +1,16 @@
 import React from 'react'
 import { CartWidget } from './CartWidget'
+import { Link } from 'react-router-dom'
+
 import "./Navbar.css"
 
 export function Navbar() {
     return (
-        <nav className="navbar bg-body-tertiary customNav">
+        <nav className="navbar bg-body-tertiary  customNav">
             <div className="container-fluid">
                 <a className="navbar-brand"><CartWidget /></a>
 
-                <a className="navbar-brand customNavbarBrand" href='/'>Solo Bebidas</a>
+                <Link className="navbar-brand customNavbarBrand" to="/">Solo Bebidas</Link>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span className="navbar-toggler-icon "></span>

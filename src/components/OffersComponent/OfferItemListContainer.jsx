@@ -1,22 +1,20 @@
 import React, { Fragment } from 'react'
 
-import "./ItemListContainer.css"
+import "./OfferItemListContainer.css"
 import { Navbar } from '../NavbarComponent/Navbar'
-import {ItemCard} from '../ItemCardComponent/ItemCard'
+import {OfferItemCard} from './OfferItemCard'
 
 
 
-
-export function ItemListContainer() {
+export function OfferItemListContainer() {
     return (
         <Fragment>
             <Navbar />
-            <h1 style={{ marginTop: '30px', textAlign: 'center', fontFamily:'fantasy', letterSpacing:'7px', fontSize:'50px'  }}>Catálogo</h1>
+            <h1 style={{ marginTop: '30px', textAlign: 'center', fontFamily:'fantasy', letterSpacing:'7px', fontSize:'50px'  }}>Ofertas</h1>
             <div id='shopContent' style={{ minHeight: '100vh', display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <ItemCard/>
+                <OfferItemCard/>
                 
             </div>
         </Fragment>
     )
 }
-

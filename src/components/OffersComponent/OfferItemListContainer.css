@@ -1,20 +1,30 @@
-.customCard {
-    width: 250px;
+.customOfferCard {
+    width: fit-content;
+    height: -moz-fit-content;
     height: fit-content;
-    padding: .8em;
+    padding: 0.8em 4rem;
     background: #f5f5f5;
     position: relative;
     overflow: visible;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     margin: 30px;
+    display: flex;
    }
    
-   .customCard-img {
-    width: 100%;
-    border-radius: .5rem;
+   .customOfferCard-img {
+    width: 250px;
+    border-radius: 0.5rem;
     transition: .3s ease;
+    margin-right: 40px;
    }
    
+   .customOfferDescription{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    min-width: 50%;
+   }
+
    .customCard-info {
     padding-top: 10%;
    }
@@ -56,7 +66,7 @@
    }
    
    /*Hover*/
-   .customCard-img:hover {
+   .customOfferCard-img:hover {
     transform: translateY(-15%);
     box-shadow: rgba(13,110,253,.25) 0px 13px 47px -5px, rgba(13,110,253,.25) 0px 8px 16px -8px;
    }
