@@ -5,4 +5,5 @@ export * from "./NavbarComponent/Navbar"
 export * from "./ItemCardComponent/ItemCard"
 export * from "./OffersComponent/OfferItemListContainer"
 export * from "./OffersComponent/OfferItemCard"
+export * from "./ItemCardComponent/ItemDetail"
 

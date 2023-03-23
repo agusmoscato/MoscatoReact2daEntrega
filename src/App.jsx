@@ -1,13 +1,13 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Inicio, Error, ItemListContainer, OfferItemListContainer} from "./components";
+import { Inicio, Error, ItemListContainer, OfferItemListContainer, ItemDetail } from "./components";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Inicio />,
-        errorElement: <Error/>
+        errorElement: <Error />
     },
     {
         path: "/Catalogo",
@@ -16,7 +16,17 @@ const router = createBrowserRouter([
     {
         path: "/Ofertas",
         element: <OfferItemListContainer />,
-    }, 
+    },
+    /* {
+        path: "/Catalogo/category/:id",
+        element: <ItemListContainer />
+    }, */
+    {
+        path: "/item/:productId",
+        element: <ItemDetail />
+    }
+
+
 ]);
 
 export function App() {
