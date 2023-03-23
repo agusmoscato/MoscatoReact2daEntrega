@@ -1,6 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Inicio, Error, ItemListContainer, OfferItemListContainer, ItemDetail, ItemDetailsOffer } from "./components";
+import { FilterItems } from "./components/ItemListComponent/FilterItems";
 
 
 const router = createBrowserRouter([
@@ -17,10 +18,10 @@ const router = createBrowserRouter([
         path: "/Ofertas",
         element: <OfferItemListContainer />,
     },
-    /* {
-        path: "/Catalogo/category/:id",
-        element: <ItemListContainer />
-    }, */
+    {
+        path: "/Catalogo/category/:productCategory",
+        element: <FilterItems />
+    },
     {
         path: "/item/:productId",
         element: <ItemDetail />,

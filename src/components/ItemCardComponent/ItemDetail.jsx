@@ -25,7 +25,7 @@ export function ItemDetail() {
                     </button>
                 </Link>
                 <div className="customOfferCard" key={producto.id}>
-                    <img src={"." + producto.img} className="detail-img" alt="" />
+                    <img src={producto.img} className="detail-img" alt="" />
                     <div className='customOfferDescription'>
                         <div className="customCard-info">
                             <p className="text-title">{producto.nombre.toUpperCase()}</p>
