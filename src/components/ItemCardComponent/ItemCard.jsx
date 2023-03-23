@@ -20,9 +20,9 @@ export function ItemCard() {
         <Fragment>
             {isLoading && <div style={{ alignSelf: 'center', color: 'gainsboro', textAlign: 'center', fontFamily: 'fantasy', letterSpacing: '7px', fontSize: '50px' }}>Cargando...</div>}
             {!isLoading && items.map(item => (
-                <div className="customCardDetail" key={item.id}>
-                    <Link to={`/item/${item.id}`}><img src={item.img} className="customCardDetail-img" alt="" /></Link>
-                    <div className="customCardDetail-info">
+                <div className="customCard" key={item.id}>
+                    <Link to={`/item/${item.id}`}><img src={item.img} className="customCard-img" alt="" /></Link>
+                    <div className="customCard-info">
                         <p className="text-title">{item.nombre.toUpperCase()}</p>
                         <p className="text-body">{item.categoria}</p>
                     </div>

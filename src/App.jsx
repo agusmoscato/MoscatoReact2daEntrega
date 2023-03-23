@@ -1,6 +1,6 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Inicio, Error, ItemListContainer, OfferItemListContainer, ItemDetail } from "./components";
+import { Inicio, Error, ItemListContainer, OfferItemListContainer, ItemDetail, ItemDetailsOffer } from "./components";
 
 
 const router = createBrowserRouter([
@@ -23,7 +23,11 @@ const router = createBrowserRouter([
     }, */
     {
         path: "/item/:productId",
-        element: <ItemDetail />
+        element: <ItemDetail />,
+    },
+    {
+        path: "/ofertas/:productId",
+        element: <ItemDetailsOffer />,
     }
 
 
