@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export function FiltersBtn() {
     const categorias = [
-        "aperitivo", "cerveza", "bebidas-blancas", "gaseosas"
+        "aperitivos", "cervezas", "bebidas-blancas", "gaseosas"
     ]
 
     return (

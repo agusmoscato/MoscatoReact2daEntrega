@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
-import ItemCount from './OfferItemCardCount'
 import { Offers } from "./offers"
 import { Link } from 'react-router-dom';
+import Loader from '../Loader/Loader';
 
 
 export function OfferItemCard() {
@@ -16,24 +16,21 @@ export function OfferItemCard() {
         }, 2000);
     }, []);
 
-    return (
+    return isLoading ? (
+        <Loader/>
+    ) : (
         <Fragment>
-            {isLoading && <div style={{ alignSelf: 'center', color: 'gainsboro', textAlign: 'center', fontFamily: 'fantasy', letterSpacing: '7px', fontSize: '50px' }}>Cargando...</div>}
             {!isLoading && items.map(item => (
-                <div className="customOfferCard" key={item.id}>
-                    <Link to={`/Ofertas/${item.id}`}><img src={item.img} className="customOfferCard-img" alt="" /></Link>
-                    <div className='customOfferDescription'>
-                        <div className="customCard-info">
-                            <p className="text-title">{item.nombre.toUpperCase()}</p>
-                            <p className="text-body">{item.categoria}</p>
-                        </div>
-                        <div className="customCard-footer">
-                            <span className="text-title">${item.precio}</span>
-                            <ItemCount />
-                            
-                        </div>
+                <Link to={`/Ofertas/${item.id}`}><div className="customCard" key={item.id}>
+                    <img src={item.img} className="customCard-img" alt="" />
+                    <div className="customCard-info">
+                        <p className="text-title">{item.nombre.toUpperCase()}</p>
+                        <p className="text-body">{item.categoria}</p>
                     </div>
-                </div>
+                    <div className="customCard-footer">
+                        <span className="text-title">${item.precio}</span>
+                    </div>
+                </div></Link>
             ))}
         </Fragment>
     )

@@ -5,8 +5,9 @@ export function Error() {
     return (
         <div>
             <div className='errorMain'>
-                <h1>Estas borracho?</h1>
-                <h2>Como llegaste aqui?</h2>
+                <h1>EROR 404</h1>
+                <h2>Estas borracho?</h2>
+                <h3>Como llegaste aqui?</h3>
                 <a href='/' className="cta">
                     <span className="hover-underline-animation"> Vovler al inicio →</span>
                 </a>

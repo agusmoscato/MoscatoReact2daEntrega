@@ -1,14 +1,17 @@
 import React from 'react'
-import { CartWidget } from './CartWidget'
 import { Link } from 'react-router-dom'
 
 import "./Navbar.css"
+import  {CartComponent}  from '../Carrito'
 
 export function Navbar() {
+    const categorias = [
+        "aperitivos", "cervezas", "bebidas-blancas", "gaseosas"
+    ]
     return (
         <nav className="navbar bg-body-tertiary  customNav">
             <div className="container-fluid">
-                <a className="navbar-brand"><CartWidget /></a>
+                {<a className="navbar-brand"><CartComponent /></a>}
 
                 <Link className="navbar-brand customNavbarBrand" to="/">Solo Bebidas</Link>
 
@@ -38,17 +41,12 @@ export function Navbar() {
                                     Categorias
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">Aperitivos</a></li>
-                                    <li><a className="dropdown-item" href="#">Cervezas</a></li>
-                                    <li><a className="dropdown-item" href="#">Bebidas Blancas</a></li>
-                                    <li><a className="dropdown-item" href="#">Gaseosas</a></li>
+                                    {categorias.map((categoria, index) => (
+                                        <li><Link key={index} className="dropdown-item" to={`/Catalogo/category/${categoria}`}>{categoria.toUpperCase()}</Link></li>
+                                    ))}
                                 </ul>
                             </li>
                         </ul>
-                        <form className="d-flex mt-3" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Buscar</button>
-                        </form>
                     </div>
                 </div>
             </div>

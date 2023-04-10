@@ -1,11 +1,21 @@
 import React from 'react'
-import { Navbar } from '../NavbarComponent/Navbar'
 import "./inicio.css"
+import Loader from '../Loader/Loader';
 
 export function Inicio() {
-    return (
+    const [isLoading, setIsLoading] = React.useState(true);
+    React.useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 4000);
+
+    }, []);
+
+
+    return isLoading ? (
+        <Loader/>
+    ) : (
         <div>
-            <Navbar/>
             <div className='inicioMain'>
                 <h1>El mejor lugar para abastecer tu bar.</h1>
                 <a href='/Catalogo' className="cta">

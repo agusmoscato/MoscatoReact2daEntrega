@@ -3,70 +3,70 @@ export const products = [
             "id": 0,
             "nombre": "cinzano",
             "precio": "710",
-            "categoria": "aperitivo",
+            "categoria": "aperitivos",
             "img": "https://i.ibb.co/dMd6rfr/CINZANO.png"
         },
         {
             "id": 1,
             "nombre": "gancia",
             "precio": "950",
-            "categoria": "aperitivo",
+            "categoria": "aperitivos",
             "img": "https://i.ibb.co/C6WqjQX/GANCIA.png"
         },
         {
             "id": 2,
             "nombre": "fernet",
             "precio": "2370",
-            "categoria": "aperitivo",
+            "categoria": "aperitivos",
             "img": "https://i.ibb.co/JcKwhpn/FERNET.png"
         },
         {
             "id": 3,
             "nombre": "aperol",
             "precio": "1490",
-            "categoria": "aperitivo",
+            "categoria": "aperitivos",
             "img": "https://i.ibb.co/zfTZ2Wk/APEROL.png"
         },
         {
             "id": 4,
             "nombre": "cynar",
             "precio": "1445",
-            "categoria": "aperitivo",
+            "categoria": "aperitivos",
             "img": "https://i.ibb.co/tQNjmPZ/CYNAR.png"
         },
         {
             "id": 5,
             "nombre": "quilmes",
             "precio": "360",
-            "categoria": "cerveza",
+            "categoria": "cervezas",
             "img": "https://i.ibb.co/xgFvS4w/QUILMES.png"
         },
         {
             "id": 6,
             "nombre": "patagonia",
             "precio": "870",
-            "categoria": "cerveza",
+            "categoria": "cervezas",
             "img": "https://i.ibb.co/9bggxLk/PATAGONIA.png"
         },
         {
             "id": 7,
             "nombre": "corona",
             "precio": "720",
-            "categoria": "cerveza",
+            "categoria": "cervezas",
             "img": "https://i.ibb.co/bznvf54/CORONA.png"
         },
         {
             "id": 8,
             "nombre": "andes",
             "precio": "460",
-            "categoria": "cerveza",
+            "categoria": "cervezas",
             "img": "https://i.ibb.co/VqVDLwh/ANDES.png"
         },
         {
             "id": 9,
             "nombre": "budweiser",
             "precio": "530",
-            "categoria": "cerveza",
+            "categoria": "cervezas",
             "img": "https://i.ibb.co/6NSmnJX/BUDWEISER.png"
         },
         {

@@ -3,7 +3,6 @@ import { products } from "../ItemCardComponent/products"
 import { useParams, Link } from 'react-router-dom';
 import { Fragment } from 'react';
 import { FiltersBtn } from "./FiltersBtn"
-import { Navbar } from '../NavbarComponent/Navbar';
 
 export function FilterItems() {
     const { productCategory } = useParams();
@@ -15,8 +14,7 @@ export function FilterItems() {
 
     return (
         <Fragment>
-            <Navbar />
-            <h1 style={{ marginTop: '30px', textAlign: 'center', fontFamily: 'fantasy', letterSpacing: '7px', fontSize: '50px' }}>{productCategory.toUpperCase()}</h1>
+            <h1 style={{ marginTop: '30px', textAlign: 'center', fontFamily: 'fantasy', letterSpacing: '7px', fontSize: '35px' }}>{productCategory.toUpperCase()}</h1>
             <FiltersBtn />
             <div id='shopContent' style={{ minHeight: '80vh', display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
                 {data.map(item => (

@@ -1,14 +1,37 @@
 import React, { Fragment } from 'react'
-import ItemCount from "./ItemCount"
+import { CartButtons } from "../Carrito"
 import "./ItemCardComponent.css"
+import "./ItemDetail.css"
 import { products } from './products';
 import { useParams, Link } from 'react-router-dom';
-import { Navbar } from '../NavbarComponent/Navbar';
+import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
 
 
 export function ItemDetail() {
 
     const { productId } = useParams();
+    const [productData, setProductData] = React.useState({});
+    const [isLoading, setLoading] = React.useState(true);
+    const [error, setError] = React.useState(false);
+    React.useEffect(() => {
+        const db = getFirestore();
+        const docRef = doc(db, "products", productId);
+        getDoc(docRef)
+            .then((product) => {
+                if (!product.exists()) {
+                    setError(true);
+                }
+                setProductData({ id: product.id, ...product.data() });
+            })
+            .catch((err) => {
+                setError(true);
+            })
+            .then(() => {
+                setLoading(false);
+            });
+    }, [productId]);
+
+
     const producto = products.find((p) => p.id === parseInt(productId));
     if (!producto) {
         return <p>Item not found</p>;
@@ -16,7 +39,6 @@ export function ItemDetail() {
 
     return (
         <Fragment>
-            <Navbar />
             <div className='detailMain'>
                 <Link to="/Catalogo">
                     <button className='btnBack'>
@@ -24,17 +46,15 @@ export function ItemDetail() {
                         <span>BACK</span>
                     </button>
                 </Link>
-                <div className="customOfferCard" key={producto.id}>
-                    <img src={producto.img} className="detail-img" alt="" />
-                    <div className='customOfferDescription'>
-                        <div className="customCard-info">
-                            <p className="text-title">{producto.nombre.toUpperCase()}</p>
-                            <p className="text-body">{producto.categoria}</p>
-                        </div>
-                        <div className="customCard-footer">
-                            <span className="text-title">${producto.precio}</span>
-                            <ItemCount />
-                        </div>
+                <div className="customCardDetail" key={producto.id}>
+                    <img src={producto.img} className="customCard-img" alt="" />
+                    <div className="customCard-info">
+                        <p className="text-title">{producto.nombre.toUpperCase()}</p>
+                        <p className="text-body">{producto.categoria}</p>
+                    </div>
+                    <div className="customCard-footer">
+                        <span className="text-title">${producto.precio}</span>
+                        <CartButtons />
                     </div>
                 </div>
             </div>

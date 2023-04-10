@@ -4,13 +4,13 @@
     justify-content: center;
     flex-wrap: wrap;
     margin: auto;
+    padding: 0;
 }
 
 .FiltersBtn {
     display: flex;
-    height: 3em;
-    width: 100px;
     align-items: center;
+    padding: 7px;
     justify-content: center;
     background-color: #eeeeee4b;
     border-radius: 3px;
@@ -21,6 +21,7 @@
     margin: 10px;
     color: black;
     text-align: center;
+    font-size: 15px;
    }
    
    .FiltersBtn > svg {
