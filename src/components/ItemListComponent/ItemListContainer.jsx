@@ -10,8 +10,6 @@ import {FiltersBtn} from './FiltersBtn'
 
 export function ItemListContainer() {
 
-
-
     return (
         <Fragment>
             <h1 style={{ marginTop: '30px', textAlign: 'center', fontFamily: 'fantasy', letterSpacing: '7px', fontSize: '35px' }}>CATALOGO</h1>

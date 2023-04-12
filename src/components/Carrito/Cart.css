@@ -1,0 +1,71 @@
+.cartContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 50px;
+    align-items: center;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
+
+.itemCount {
+    font-size: 1.2rem;
+}
+
+.cartContainer:hover {
+    cursor: pointer;
+}
+
+
+.cardsWrapper {
+    height: fit-content;
+}
+
+.paymentDetails {
+    display: flex;
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.total {
+    padding: 30px 0;
+}
+
+.continueButton {
+    font-size: 1.5rem;
+    border-radius: 12px;
+}
+
+
+.cartWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.productCardDetail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartDetail {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-around;
+    background: rgb(236, 236, 236);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.cartDetail:hover{
+    transform: none !important;
+    box-shadow: none !important;;
+}

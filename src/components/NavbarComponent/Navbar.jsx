@@ -6,7 +6,7 @@ import  {CartComponent}  from '../Carrito'
 
 export function Navbar() {
     const categorias = [
-        "aperitivos", "cervezas", "bebidas-blancas", "gaseosas"
+        "aperitivos", "cervezas", "bebidas-blancas", "gaseosas", "combos"
     ]
     return (
         <nav className="navbar bg-body-tertiary  customNav">
@@ -31,9 +31,6 @@ export function Navbar() {
                                 <a className="nav-link active" aria-current="page" href="/">Inicio</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/Ofertas">Ofertas</a>
-                            </li>
-                            <li className="nav-item">
                                 <a className="nav-link" href="/Catalogo">Catalogo</a>
                             </li>
                             <li className="nav-item dropdown">
@@ -42,7 +39,7 @@ export function Navbar() {
                                 </a>
                                 <ul className="dropdown-menu">
                                     {categorias.map((categoria, index) => (
-                                        <li><Link key={index} className="dropdown-item" to={`/Catalogo/category/${categoria}`}>{categoria.toUpperCase()}</Link></li>
+                                        <li><Link key={index} className="dropdown-item" to={`/Catalogo/${categoria}`}>{categoria.toUpperCase()}</Link></li>
                                     ))}
                                 </ul>
                             </li>

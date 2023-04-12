@@ -50,7 +50,7 @@ export function ItemDetail() {
                     <img src={productData.img} className="customCard-img" alt="" />
                     <div className="customCard-info">
                         <p className="text-title">{productData.nombre.toUpperCase()}</p>
-                        <p className="text-body">{productData.categoria}</p>
+                        <p className="text-body">{productData.categoria.toUpperCase()}</p>
                     </div>
                     <div className="customCard-footer">
                         <span className="text-title">${productData.precio}</span>

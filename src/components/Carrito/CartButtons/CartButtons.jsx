@@ -4,9 +4,7 @@ import { CartContext } from "../../../context/cartContext";
 
 export const CartButtons = () => {
   const [state, setState] = React.useState(1);
-
   const { productId } = useParams();
-
   const { itemCount, setItemCount } = useContext(CartContext);
 
   const handleMoreClick = () => {
@@ -35,6 +33,7 @@ export const CartButtons = () => {
       }));
     }
   };
+
 
   return (
     <div className="countBox">

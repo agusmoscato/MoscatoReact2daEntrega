@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import "./ItemCardComponent.css"
-import { Link } from 'react-router-dom';/* 
-import { products } from './products'; */
+import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 import { doc, getDoc, getFiresore } from "firebase/firestore"
 
@@ -25,25 +24,22 @@ export function ItemCard() {
 
     React.useEffect(() => {
         const db = getFirestore();
-
         const itemsCollection = collection(db, "items");
         getDocs(itemsCollection)
             .then((items) => {
                 if (items.length === 0) {
                     console.log("No products");
                 }
-
                 setProductsData(
                     items.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
                 );
-
                 setItems(productsData);
             })
             .catch((err) => console.log(err))
             .then(() => {
                 setLoading(false);
             });
-    }, []);
+    }, [productsData]);
 
 
 
@@ -56,7 +52,7 @@ export function ItemCard() {
                     <img src={items.img} className="customCard-img" alt="" />
                     <div className="customCard-info">
                         <p className="text-title">{items.nombre.toUpperCase()}</p>
-                        <p className="text-body">{items.categoria}</p>
+                        <p className="text-body">{items.categoria.toUpperCase()}</p>
                     </div>
                     <div className="customCard-footer">
                         <span className="text-title">${items.precio}</span>

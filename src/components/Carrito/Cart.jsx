@@ -1,16 +1,17 @@
 import React, { useContext } from "react";
 import { collection, getDoc, doc, getFirestore } from "firebase/firestore";
 import { CartContext } from "../../context/cartContext";
-import { CartDetailCard, CartPaymentDetails} from "../Carrito";
+import { CartDetailCard, CartPaymentDetails } from "../Carrito";
 import Loader from "../Loader/Loader";
 import { useLocation, useNavigate } from "react-router-dom";
+import "./Cart.css"
 
 //Esta función crea las referencias de los productos utilizando los IDs del itemCount.
 //Una vez hecho eso, con Promise.all,
 //devuelve el array resultante de ejecutar todas las llamadas segun la cantidad de productos (ids) agregados al carrito
 const fetchProductsByIds = async (ids) => {
   const db = getFirestore();
-  const productRefs = ids.map((id) => doc(collection(db, "products"), id));
+  const productRefs = ids.map((id) => doc(collection(db, "items"), id));
 
   const productSnapshots = await Promise.all(
     productRefs.map((productRef) => getDoc(productRef))
@@ -31,7 +32,7 @@ const fetchProductsByIds = async (ids) => {
 const styles = {
   cartWrapper: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     width: "100%",
     height: "100vh",
   },
@@ -76,8 +77,8 @@ export const Cart = () => {
   return loading ? (
     <Loader />
   ) : (
-    <div style={styles.cartWrapper}>
-      <div style={styles.productCardDetail}>
+    <div className="cartWrapper">
+      <div className="productCardDetail">
         {productsData.map((product) => (
           <CartDetailCard
             key={product.id}
