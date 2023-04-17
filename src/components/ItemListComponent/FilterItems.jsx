@@ -31,8 +31,8 @@ export function FilterItems() {
             })
             .catch((err) => console.log(err))
             .then(() => setLoading(false));
-        console.log(productCategory);
     }, [productCategory]);
+
 
     return loading ? <Loader /> : (
         <Fragment>

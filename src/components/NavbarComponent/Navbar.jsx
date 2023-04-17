@@ -11,7 +11,7 @@ export function Navbar() {
     return (
         <nav className="navbar bg-body-tertiary  customNav">
             <div className="container-fluid">
-                {<a className="navbar-brand"><CartComponent /></a>}
+                <CartComponent />
 
                 <Link className="navbar-brand customNavbarBrand" to="/">Solo Bebidas</Link>
 
@@ -19,7 +19,7 @@ export function Navbar() {
                     <span className="navbar-toggler-icon "></span>
                 </button>
 
-                <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 
                     <div className="offcanvas-header">
                         <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
@@ -39,7 +39,7 @@ export function Navbar() {
                                 </a>
                                 <ul className="dropdown-menu">
                                     {categorias.map((categoria, index) => (
-                                        <li><Link key={index} className="dropdown-item" to={`/Catalogo/${categoria}`}>{categoria.toUpperCase()}</Link></li>
+                                        <li key={index}><Link className="dropdown-item" to={`/Catalogo/${categoria}`}>{categoria.toUpperCase()}</Link></li>
                                     ))}
                                 </ul>
                             </li>

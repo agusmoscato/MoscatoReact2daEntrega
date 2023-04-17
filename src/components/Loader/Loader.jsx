@@ -5,7 +5,7 @@ export default function Loader() {
     return (
         <div className='inicioMain'>
             <div>
-                <div class="loader"></div>
+                <div className="loader"></div>
             </div>
         </div>
     )

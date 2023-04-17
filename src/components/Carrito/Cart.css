@@ -36,8 +36,20 @@
 }
 
 .continueButton {
-    font-size: 1.5rem;
-    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    justify-content: center;
+    background-color: #eeeeee4b;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: 1px solid;
+    margin: 10px;
+    color: black;
+    text-align: center;
+    font-size: 15px;
 }
 
 
@@ -67,5 +79,5 @@
 
 .cartDetail:hover{
     transform: none !important;
-    box-shadow: none !important;;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }

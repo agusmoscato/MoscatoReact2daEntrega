@@ -48,16 +48,18 @@ export function ItemCard() {
     ) : (
         <Fragment>
             {productsData.map(items => (
-                <Link to={`/item/${items.id}`}><div className="customCard" key={items.id}>
-                    <img src={items.img} className="customCard-img" alt="" />
-                    <div className="customCard-info">
-                        <p className="text-title">{items.nombre.toUpperCase()}</p>
-                        <p className="text-body">{items.categoria.toUpperCase()}</p>
+                <Link to={`/item/${items.id}`} key={items.id}>
+                    <div className="customCard">
+                        <img src={items.img} className="customCard-img" alt="" />
+                        <div className="customCard-info">
+                            <p className="text-title">{items.nombre.toUpperCase()}</p>
+                            <p className="text-body">{items.categoria.toUpperCase()}</p>
+                        </div>
+                        <div className="customCard-footer">
+                            <span className="text-title">${items.precio}</span>
+                        </div>
                     </div>
-                    <div className="customCard-footer">
-                        <span className="text-title">${items.precio}</span>
-                    </div>
-                </div></Link>
+                </Link>
             ))}
         </Fragment>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from'react-dom';
+import {createRoot}  from'react-dom/client';
 import {App} from './App';
 
 // Import the functions you need from the SDKs you need
@@ -20,4 +20,4 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-ReactDOM.render(<App/>, document.getElementById("root"))
+createRoot(document.getElementById('root')).render(<App />);

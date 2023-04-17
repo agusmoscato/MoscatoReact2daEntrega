@@ -9,16 +9,15 @@ import { CartContext } from '../../../context/cartContext'
 
 export const CartComponent = () => {
 
-  const {itemCount} = useContext(CartContext);
-      console.log(itemCount);
-      console.log(itemCount.qtyItems);
+  const { itemCount } = useContext(CartContext);
+
 
   return (
-      <Link to={"/cart"}>
-        <div className="cartContainer">
-          <FontAwesomeIcon icon={faCartShopping} className="icon" />
-          <span className="itemCount">{itemCount.qtyItems}</span>
-        </div>
-      </Link>
-      )
+    <Link to={"/cart"}>
+      <div className="cartContainer">
+        <FontAwesomeIcon icon={faCartShopping} className="icon" />
+        <span className="itemCount">{itemCount.qtyItems}</span>
+      </div>
+    </Link>
+  )
 }

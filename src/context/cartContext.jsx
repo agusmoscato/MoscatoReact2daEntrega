@@ -9,11 +9,28 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [itemCount, setItemCount] = useState({ qtyItems: 0, products: [] });
 
+  const updateItemQty = (productId, qty) => {
+    const updatedProducts = itemCount.products.map((product) =>
+      product.productId === productId ? { ...product, qty } : product
+    );
+
+    const updatedTotalQty = updatedProducts.reduce(
+      (acc, curr) => acc + curr.qty,
+      0
+    );
+
+    setItemCount({
+      qtyItems: updatedTotalQty,
+      products: updatedProducts,
+    });
+  };
+
   return (
     <CartContext.Provider
       value={{
         itemCount,
         setItemCount,
+        updateItemQty,
       }}
     >
       {children}
